@@ -35,11 +35,11 @@ pf Commands
 
 General Commands
 ----------------
-| ACTION | COMMAND |
+| COMMAND | ACTION |
 | --- | --- |
-| RESTART/RELOAD NET INTERFACES  | `sh /etc/netstart` |
-| SHOW ROUTES                    | `route show` |
-| START/STOP DHCP SERVER         | `rcctl [stop/start] dhcpd` |
+| `sh /etc/netstart` | RESTART/RELOAD NET INTERFACES |
+| `route show` | SHOW ROUTES |
+| `rcctl [stop/start] dhcpd` | START/STOP DHCP SERVER |
 
 Biblio
 ------
