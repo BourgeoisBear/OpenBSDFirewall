@@ -1,7 +1,6 @@
 # OpenBSDFirewall
 
-Files
------
+## Files
 | FILE | PURPOSE |
 | --- | --- |
 |`/etc/dhcpd.conf`                    | DHCP SERVER CONFIG                                                       |
@@ -17,8 +16,7 @@ Files
 |`/etc/mygate`                        | STATIC GATEWAY IP IN THIS FILE; CAN OMIT IF USING DHCP FOR WAN INTERFACE |
 
 
-pf Commands
------------
+## pf Commands
 | COMMAND | ACTION |
 | --- | --- |
 | `pfctl -e`                                    | ENABLE FIREWALL |
@@ -33,20 +31,17 @@ pf Commands
 | `pfctl -t <table> -T show`                    | SHOW TABLE CONTENTS |
 | `pfctl -t <table> -T replace -f /table.txt`   | REPLACE TABLE CONTENTS WITH FILE |
 
-General Commands
-----------------
+## General Commands
 | COMMAND | ACTION |
 | --- | --- |
 | `sh /etc/netstart` | RESTART/RELOAD NET INTERFACES |
 | `route show` | SHOW ROUTES |
 | `rcctl [stop/start] dhcpd` | START/STOP DHCP SERVER |
 
-Questions?
-----------
-Get in touch at [https://eggplant.pro/contact.php](https://eggplant.pro/contact.php)
+## Questions?
+[Pf firewalling questions, contact us at https://eggplant.pro/contact.php.](https://eggplant.pro/contact.php)
 
-Biblio
-------
+## Biblio
 "The Book of Pf", Peter N.M. Hansteen
 ISBN: 978-1-59327-589-1
 No Starch Press
@@ -56,5 +51,5 @@ ISBN: 978-1-59327-476-4
 No Starch Press
 
 OpenBSD Online Docs
-https://www.openbsd.org/faq/
-http://man.openbsd.org/cgi-bin/man.cgi
+* https://www.openbsd.org/faq/
+* http://man.openbsd.org/cgi-bin/man.cgi
