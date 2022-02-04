@@ -30,6 +30,8 @@
 | `pfctl -sT`                                   | Shows a list of loaded tables |
 | `pfctl -t <table> -T show`                    | SHOW TABLE CONTENTS |
 | `pfctl -t <table> -T replace -f /table.txt`   | REPLACE TABLE CONTENTS WITH FILE |
+| `systat`                                      | SYSTEM STATS (including net) |
+| `pftop`                                       | `top` FOR NETWORK (external package) |
 
 ## General Commands
 | COMMAND | ACTION |
