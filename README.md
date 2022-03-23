@@ -40,9 +40,6 @@
 | `route show` | SHOW ROUTES |
 | `rcctl [stop/start] dhcpd` | START/STOP DHCP SERVER |
 
-## Questions?
-[Pf firewalling questions, contact us at https://eggplant.pro/contact.php.](https://eggplant.pro/contact.php)
-
 ## Biblio
 "The Book of Pf", Peter N.M. Hansteen
 ISBN: 978-1-59327-589-1
