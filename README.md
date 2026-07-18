@@ -1,22 +1,42 @@
 # OpenBSDFirewall
 
+## Unbound
+
+**!NOTE** To enable unbound (caching DNS resolver), you will first have to create a root key:
+
+```sh
+# change to root key directory
+cd /var/unbound/db
+
+# update root key
+unbound-anchor -a ./root.key
+
+# correct filesystem perms/owner for the root key
+chown _unbound:_unbound ./root.key
+chmod 644 ./root.key
+
+# restart unbound
+rcctl restart unbound
+```
+
 ## Files
 
-| FILE                          | PURPOSE                                                                  |
-| ----                          | -------                                                                  |
-| `/etc/pf_tables/ASSHOLES.txt` | table for internet asshole exclusion                                     |
-| `/etc/dhcp6leased.conf`       | DHCPv6 client config                                                     |
-| `/etc/dhcpd.conf`             | DHCP server config                                                       |
-| `/etc/hostname.vr0`           | WAN (to internet modem) via DHCP on vr0                                  |
-| `/etc/hostname.vr1`           | LAN (to local network) w/static IP on vr1                                |
-| `/etc/motd`                   | default is probably not good                                             |
-| `/etc/mygate`                 | static gateway IP in this file; can omit if using DHCP for WAN interface |
-| `/etc/pf.conf`                | the firewall                                                             |
-| `/etc/rad.conf`               | configures IPv6 route advertisement service to LAN                       |
-| `/etc/rc.conf.local`          | enables/configures system start-up services                              |
-| `/etc/resolv.conf`            | DNS resolution: auto-updated on DHCP lease                               |
-| `/etc/sysctl.conf`            | system runtime parameters to enable routing                              |
-
+| FILE                            | PURPOSE                                                                  |
+| ----                            | -------                                                                  |
+| `/etc/pf_tables/ASSHOLES.txt`   | table for internet asshole exclusion                                     |
+| `/etc/dhcp6leased.conf`         | DHCPv6 client config                                                     |
+| `/etc/dhcpd.conf`               | DHCP server config                                                       |
+| `/etc/hostname.vr0`             | WAN (to internet modem) via DHCP on vr0                                  |
+| `/etc/hostname.vr1`             | LAN (to local network) w/static IP on vr1                                |
+| `/etc/motd`                     | default is probably not good                                             |
+| `/etc/mygate`                   | static gateway IP in this file; can omit if using DHCP for WAN interface |
+| `/etc/pf.conf`                  | the firewall                                                             |
+| `/etc/rad.conf`                 | configures IPv6 route advertisement service to LAN                       |
+| `/etc/rc.conf.local`            | enables/configures system start-up services                              |
+| `/etc/resolv.conf`              | DNS resolution: auto-updated on DHCP lease                               |
+| `/etc/sysctl.conf`              | system runtime parameters to enable routing                              |
+| `/var/unbound/etc/unbound.conf` | configuration for the `unbound` caching DNS resolver                     |
+| `/var/unbound/db/root.hints`    | root name server information used to initialize DNS resolver             |
 
 ## pf Commands
 
@@ -57,5 +77,18 @@
 
 ## OpenBSD Online Docs
 
-* https://www.openbsd.org/faq/
-* http://man.openbsd.org/cgi-bin/man.cgi
+- https://www.openbsd.org/faq/
+- http://man.openbsd.org/cgi-bin/man.cgi
+
+## Miscellaneous Links
+
+### IPv6 PREFIX DELEGATION
+
+- https://sha256.net/dhcpv6-pd-first-steps.html
+- https://eradman.com/posts/ipv6-strategy.html
+- https://mpolden.no/blog/posts/2024-10-11-openbsd-dhcp6leased-and-altibox.html
+
+### TOTAL FIREWALL CONFIG
+
+- https://code.jeremyevans.net/2024-11-03-adding-ipv6-to-my-home-network.html
+- https://lipidity.com/openbsd/router/
