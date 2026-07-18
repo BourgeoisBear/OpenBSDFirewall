@@ -1,1 +1,8 @@
-inet 192.168.0.1 255.255.255.0 192.168.0.255 description "FW-LAN"
+# configure vr1 as the LAN interface
+
+# assign static IP of 192.168.0.1/24 to it
+inet 192.168.0.1 255.255.255.0 NONE description "FW-LAN"
+
+# assign a link-local v6 address for local addressing
+# internet-accessible address will be acquired via prefix delegation
+inet6 fd00:0:0:1::1 64

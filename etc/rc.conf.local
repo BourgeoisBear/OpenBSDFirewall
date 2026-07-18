@@ -1,0 +1,20 @@
+# enable dhcp6 client
+dhcp6leased_flags=
+
+# enable DHCP server on LAN interface
+dhcpd_flags=vr1
+
+# enable firewall
+pf=YES
+
+# enable DHCP client for IPv6 prefix delegation
+pkg_scripts=dhcpcd
+
+# enable IPv6 route advertisement
+rad_flags=
+
+# disable resolvd to prevent auto-population of upstream DNS servers
+resolvd_flags=NO
+
+# enable Unbound DNS server
+unbound_flags=

@@ -1,1 +1,7 @@
-dhcp description "FW-WAN"
+# configure vr0 as the WAN (internet-facing) interface
+
+# acquire an IPv4 address for it via a DHCP lease from the ISP
+inet autoconf description "FW-WAN"
+
+# acquire an IPv6 address via SLAAC
+inet6 autoconf
